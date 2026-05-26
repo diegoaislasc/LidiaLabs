@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LidiaLabs - Real Estate Distribution Plan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --text-main: #111111;
+            --text-muted: #666666;
+            --border-color: #e5e5e5;
+            --bg-color: #ffffff;
+            --accent: #0047AB; /* Cobalt Blue for strategic highlights */
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .document-container {
+            max-width: 850px;
+            width: 100%;
+        }
+
+        /* Cabecera (Header & Metadata) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 24px;
+            margin-bottom: 48px;
+        }
+
+        .header-left {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-left span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 32px;
+            row-gap: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .meta-label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* Sistema Tipográfico */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0 0 16px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin: 0 0 48px 0;
+            line-height: 1.5;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 56px 0 24px 0;
+            display: flex;
+            align-items: baseline;
+            border-bottom: 1px solid var(--text-main);
+            padding-bottom: 8px;
+        }
+
+        h2 span.num {
+            color: var(--text-muted);
+            margin-right: 12px;
+        }
+
+        h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-main);
+            letter-spacing: 0.05em;
+            margin: 32px 0 12px 0;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            max-width: 75ch;
+        }
+
+        /* Listas Personalizadas */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Tablas Minimalistas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 16px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        td {
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        .highlight-cell {
+            background-color: #f9f9f9;
+            font-weight: 600;
+        }
+
+        /* Callouts / Formulas */
+        .callout {
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            margin: 40px 0;
+            background-color: #fafafa;
+        }
+
+        .formula-box {
+            text-align: center;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 20px;
+            border: 1px dashed var(--border-color);
+            margin: 20px 0;
+        }
+
+        .allocation-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .percent-block {
+            flex: 1;
+        }
+
+        .percent-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .percent-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .legal-symbol {
+            margin-right: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                LIDIALABS
+                <span>STRATEGIC BLUEPRINT DOC-2026-RE02</span>
+            </div>
+            <div class="metadata-grid">
+                <span class="meta-label">DE PARTE DE:</span>
+                <span class="meta-value">Growth Strategy (LidiaLabs)</span>
+                
+                <span class="meta-label">PARA:</span>
+                <span class="meta-value">Nicho Inmobiliario (GTM)</span>
+                
+                <span class="meta-label">REFERENCIA:</span>
+                <span class="meta-value">Plan de Distribución 30 Días</span>
+                
+                <span class="meta-label">FECHA / STATUS:</span>
+                <span class="meta-value">16 MAY 2026 / VIGENTE</span>
+            </div>
+        </header>
+
+        <!-- Titular -->
+        <h1>Distribution Domination Plan:<br>Infiltración Operativa 1.0</h1>
+        <div class="subtitle">
+            Estrategia de crecimiento acelerado para capturar a los Top Producers del sector inmobiliario mediante validación por confianza y dogfooding técnico.
+        </div>
+
+        <!-- 01. Acquisition Channels -->
+        <h2><span class="num">01.</span> CANALES DE ADQUISICIÓN POR EFICIENCIA</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Canal</th>
+                    <th>Prioridad</th>
+                    <th>Rationale Estratégico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Proof-of-Person Network</strong></td>
+                    <td class="highlight-cell">CRÍTICA</td>
+                    <td>Conversión máxima ($0 CAC). Apalancamiento del éxito real del PoC interno en redes de confianza.</td>
+                </tr>
+                <tr>
+                    <td><strong>Dogfooding Outbound</strong></td>
+                    <td>ALTA</td>
+                    <td>Demostración inmediata de la tecnología. La prospección misma es el argumento de venta.</td>
+                </tr>
+                <tr>
+                    <td><strong>LinkedIn Social Selling</strong></td>
+                    <td>ALTA</td>
+                    <td>Establecimiento de autoridad técnica frente a directores de agencias boutique y brokers VIP.</td>
+                </tr>
+                <tr>
+                    <td><strong>Meta Retargeting</strong></td>
+                    <td>MEDIA</td>
+                    <td>Mantener presencia de marca exclusivamente para quienes ya interactuaron con el Offer Memo.</td>
+                </tr>
+                <tr>
+                    <td><strong>Comunidades Privadas</strong></td>
+                    <td>MEDIA</td>
+                    <td>Infiltración en grupos de WhatsApp/Facebook donde ocurre el 80% del "Dark Social" B2B.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 02. Content Formats -->
+        <h2><span class="num">02.</span> FORMATOS DE CONTENIDO POR CANAL</h2>
+        <ul>
+            <li><strong>Micro-Demo Privada (Referidos):</strong> Sesión de 10 min mostrando el calendario real lleno y logs de IA en vivo.</li>
+            <li><strong>The Friction Question (Outbound):</strong> Texto plano, ultra-corto: "¿Sigues filtrando curiosos a mano o ya usas agentes?"</li>
+            <li><strong>Operational Tear-downs (LinkedIn):</strong> Carruseles analizando por qué el modelo tradicional de agencia inmobiliaria está obsoleto.</li>
+            <li><strong>Aha! Moment Snippet (Paid):</strong> Grabación de pantalla de 15s: Lead entra a las 2 AM → IA responde → Cita agendada.</li>
+            <li><strong>The Technical Recipe (Comunidades):</strong> Documento de valor con el prompt exacto para descartar "turistas inmobiliarios".</li>
+        </ul>
+
+        <!-- 03. Weekly Roadmap -->
+        <h2><span class="num">03.</span> CALENDARIO DE EJECUCIÓN SEMANAL</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Foco Principal</th>
+                    <th>Entregable Clave</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Semana 1</strong></td>
+                    <td>Infraestructura PoC</td>
+                    <td>Deployment del Offer Memo + Pipeline de extracción de Top Producers.</td>
+                </tr>
+                <tr>
+                    <td><strong>Semana 2</strong></td>
+                    <td>Infiltración</td>
+                    <td>Activación de red de referidos + Inicio de campaña Outbound (100 prospectos).</td>
+                </tr>
+                <tr>
+                    <td><strong>Semana 3</strong></td>
+                    <td>Amplificación</td>
+                    <td>Lanzamiento de Retargeting Ads + Alianzas con líderes de asociaciones locales.</td>
+                </tr>
+                <tr>
+                    <td><strong>Semana 4</strong></td>
+                    <td>Efecto Red</td>
+                    <td>Cierre de los primeros 10 Early Adopters + Implementación de sistema de referidos.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 04. Allocation -->
+        <h2><span class="num">04.</span> DIVISIÓN DE RECURSOS (ORGANIC VS PAID)</h2>
+        <div class="callout">
+            <p>La validación en etapa temprana requiere educación y confianza, no volumen de clics barato. La asignación prioriza el contacto directo sobre la pauta fría.</p>
+            <div class="allocation-grid">
+                <div class="percent-block">
+                    <span class="percent-value" style="color: var(--accent);">85%</span>
+                    <span class="percent-label">Orgánico / Outbound</span>
+                </div>
+                <div class="percent-block">
+                    <span class="percent-value">15%</span>
+                    <span class="percent-label">Paid Retargeting</span>
+                </div>
+            </div>
+            <div class="formula-box">
+                ROI Objetivo = (Ingreso por Cierre / CAC) > 5.0
+            </div>
+        </div>
+
+        <!-- 05. Leverage Plays -->
+        <h2><span class="num">05.</span> JUGADAS DE APALANCAMIENTO (LEVERAGE)</h2>
+        <ul>
+            <li><strong>Inception Inmobiliaria:</strong> Prospectar al agente usando a Lidia. Cuando admiren el seguimiento, revelar que es una IA.</li>
+            <li><strong>El Caballo de Troya:</strong> Implementación gratuita para 3 "Coaches" inmobiliarios a cambio de exposición ante sus audiencias.</li>
+            <li><strong>Reciclaje "Show, Don't Tell":</strong> Un solo video de una interacción real de la IA se distribuye como GIF en emails, video en LinkedIn y Hero en web.</li>
+        </ul>
+
+        <!-- Footer -->
+        <footer>
+            <div><span class="legal-symbol">§</span> LidiaLabs Distribution Blueprint 2026</div>
+            <div><a href="#">LIDIALABS.COM</a></div>
+            <div>PÁGINA 1/1</div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LidiaLabs - Real Estate Offer Memo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap');
+        
+        :root {
+            --text-main: #111111;
+            --text-muted: #737373;
+            --border-color: #eaeaea; /* Líneas muy sutiles */
+            --bg-color: #ffffff;
+            --accent-light: #b0b0b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Cabecera (Header) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 64px;
+        }
+
+        .header-left strong {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-right span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .header-right strong {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 64px;
+        }
+
+        .supertitle {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin: 0 0 24px 0;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0;
+        }
+
+        .hero p strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Metadata Section */
+        .metadata-section {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 2fr;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .meta-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .meta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+        }
+
+        .meta-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .meta-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .meta-grid-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 24px;
+        }
+
+        /* Secciones Body */
+        .section-container {
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            margin-top: 48px;
+        }
+
+        /* Remueve el borde de la primera sección porque la metadata ya tiene borde abajo */
+        .section-container:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 24px;
+        }
+
+        .section-title-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .section-header .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--border-color);
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .section-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Tipografía Body */
+        .lead-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+
+        .muted-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 24px 0;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* 2 Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .col-header {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+
+        /* Custom Lists */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        ul.custom-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        ul.custom-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 400;
+        }
+
+        /* Accounting List */
+        .accounting-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .ac-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ac-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--accent-light); /* Matching the grey monospace in Siantek */
+        }
+        
+        .ac-row.total-row {
+            margin-top: 8px;
+        }
+
+        .ac-row.total-row .ac-val {
+            color: var(--text-main); /* Resalta el total / premium */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .metadata-section {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        /* Print Optimized Styles */
+        @media print {
+            @page {
+                size: portrait;
+                margin: 0; /* Esto elimina encabezados y pies de página del navegador */
+            }
+            
+            body {
+                padding: 15mm 25mm; /* Margen físico reducido para más info por página */
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .document-container {
+                max-width: 100%;
+            }
+
+            /* Forzamos que las columnas no se colapsen */
+            .metadata-section {
+                display: grid !important;
+                grid-template-columns: 1.5fr 1.5fr 2fr !important;
+                gap: 32px !important;
+            }
+
+            .two-col {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 48px !important;
+            }
+
+            h1 {
+                font-size: 5rem !important;
+            }
+
+            /* Evita que las secciones se corten a la mitad entre páginas */
+            .section-container {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <strong>LidiaLabs</strong>
+            </div>
+            <div class="header-right">
+                <span>OFFER MEMO</span>
+                <strong>DOC-2026-RE01</strong>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="supertitle">PROPUESTA DE GENERACIÓN DE LEADS</div>
+            <h1>Tú Muestra<br>la Propiedad</h1>
+            <p>Delega la prospección a la autonomía de Lidia y convierte tu flujo de curiosos en un pipeline de reuniones confirmadas. <strong>Nosotros cerramos la cita.</strong></p>
+        </div>
+
+        <!-- Metadata Grid -->
+        <div class="metadata-section">
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">DE PARTE DE</span>
+                    <span class="meta-title">LidiaLabs</span>
+                    <div class="meta-text">
+                        Dirección Comercial<br>
+                        Infraestructura Autónoma<br>
+                        Monterrey, N.L.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">PARA</span>
+                    <span class="meta-title">Vanessa Osorno</span>
+                    <div class="meta-text">
+                        Dorado 5 Real Estate<br>
+                        POC Inmobiliario
+                    </div>
+                </div>
+            </div>
+
+            <div class="meta-col">
+                <div class="meta-group" style="margin-bottom: 8px;">
+                    <span class="meta-label">REFERENCIA</span>
+                    <span class="meta-text">Piloto de Crecimiento Autónomo</span>
+                </div>
+                <div class="meta-grid-right">
+                    <div class="meta-group">
+                        <span class="meta-label">EMISIÓN</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">20 may 2026</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">VIGENCIA</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">7 días</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">FOLIO</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">POC-RE-D5</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">TIPO</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">Adquisición</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Sections -->
+        
+        <!-- Section 01 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">01</span>
+                    <h2>El Objetivo Principal</h2>
+                </div>
+                <span class="section-tag">ELIMINACIÓN DE CARGA</span>
+            </div>
+            <p class="lead-text">Eliminar tu carga operativa en la prospección y calificación de leads, entregando únicamente <strong>citas confirmadas</strong> en tu calendario.</p>
+            <p class="muted-text">Buscamos colapsar tu tiempo de gestión de prospectos de horas a minutos. Mientras tú te enfocas en cerrar la venta de las propiedades de Dorado 5, nuestra infraestructura gestiona el ruido y califica la intención real de compra.</p>
+        </div>
+
+        <!-- Section 02 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">02</span>
+                    <h2>Nuestro Compromiso</h2>
+                </div>
+                <span class="section-tag">INFRAESTRUCTURA END-TO-END</span>
+            </div>
+            <p class="lead-text">LidiaLabs asume la responsabilidad total del flujo de adquisición hasta que el lead aterriza en tu agenda.</p>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">CAPTACIÓN Y FILTRO</div>
+                    <ul class="custom-list">
+                        <li><strong>Captación Agéntica:</strong> Configuración de agentes de IA para interactuar proactivamente en tus redes sociales.</li>
+                        <li><strong>Calificación Inteligente:</strong> Filtro dinámico basado en presupuesto, zona de interés e intención de compra inmediata.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">GESTIÓN Y AGENDA</div>
+                    <ul class="custom-list">
+                        <li><strong>Agenda Autónoma:</strong> Lidia genera y gestiona tu agenda para fijar citas sin intervención manual.</li>
+                        <li><strong>Control Total:</strong> Acceso a un dashboard personalizado para visualizar el estatus de cada lead.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 03 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">03</span>
+                    <h2>Requerimientos Iniciales</h2>
+                </div>
+                <span class="section-tag">SETUP</span>
+            </div>
+            
+            <p class="lead-text">Para desplegar la infraestructura, necesitamos acceso a tus herramientas de captación actuales.</p>
+
+            <div class="two-col">
+                <div>
+                    <div class="col-header">ACTIVOS DIGITALES</div>
+                    <ul class="custom-list">
+                        <li><strong>Accesos:</strong> Meta Business Suite (Fan Page/Instagram) para conectar al agente.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">LÓGICA DE NEGOCIO</div>
+                    <ul class="custom-list">
+                        <li><strong>Catálogo:</strong> Información actualizada de propiedades en Dorado 5.</li>
+                        <li><strong>Filtros:</strong> Tus criterios exactos para considerar a un lead como "calificado".</li>
+                        <li><strong>Preguntas Frecuentes:</strong> ¿Qué es lo que más preguntan los clientes al mandar mensajes? (Resolución autónoma de dudas iniciales).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 04 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">04</span>
+                    <h2>Esquema Comercial</h2>
+                </div>
+                <span class="section-tag">RIESGO CERO</span>
+            </div>
+            <p class="lead-text">Diseñado para demostrar valor antes de cualquier compromiso financiero.</p>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">MES 1: IMPLEMENTACIÓN GRATUITA</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Nosotros asumimos el 100% del costo de desarrollo, configuración y despliegue del flujo agéntico. Tu única inversión es el tiempo para darnos feedback sobre la calidad de las citas generadas.</p>
+                </div>
+                <div>
+                    <div class="col-header">POST-VALIDACIÓN</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Una vez que el sistema demuestre resultados tangibles (ej. cierre de ventas a través de nuestras citas), nos sentaremos a estructurar un modelo de partnership a la medida (fee de implementación y operación), asegurando que el ROI sea siempre positivo y transparente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 05 -->
+        <div class="section-container" style="border-bottom: 1px solid var(--border-color); padding-bottom: 48px; margin-bottom: 48px;">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">05</span>
+                    <h2>Modelo de Éxito</h2>
+                </div>
+                <span class="section-tag">FEEDBACK LOOP</span>
+            </div>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">NUESTRO OBJETIVO</div>
+                    <ul class="custom-list">
+                        <li><strong>Validación:</strong> Confirmar la tasa de conversión en el sector inmobiliario de alto ticket.</li>
+                        <li><strong>Optimización:</strong> Mejora continua del agente basada en tu feedback semanal.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">ACUERDO DE COLABORACIÓN</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">A cambio del despliegue gratuito de la infraestructura, solicitamos tu compromiso en el feedback de calidad y el uso de métricas anonimizadas para nuestro caso de estudio.</p>
+                    <p class="lead-text" style="font-size: 0.85rem;">Tú recibes las citas; nosotros validamos el sistema.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
