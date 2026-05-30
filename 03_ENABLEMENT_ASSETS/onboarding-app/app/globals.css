@@ -65,8 +65,16 @@ input, select, textarea, button {
 }
 
 .header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+.brand-mark {
+  object-fit: contain;
+  filter: invert(1); /* mark negro → blanco sobre el tema oscuro */
 }
 
 .header-right {

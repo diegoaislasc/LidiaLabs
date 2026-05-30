@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import type { OnboardingData } from "@/lib/types";
 
 const WHATSAPP_NOTIFY = "526622335208"; // número de LidiaLabs para el aviso final
@@ -281,6 +282,7 @@ export default function OnboardingForm() {
     return (
       <div className="app-container" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div className="success-container">
+          <Image src="/brand-mark.png" alt="LidiaLabs" width={48} height={48} className="brand-mark" style={{ marginBottom: "24px" }} />
           <div className="success-icon">✓</div>
           <h2 className="form-title">¡Formulario Completado!</h2>
           <p className="form-subtitle">LidiaLabs está listo para inicializar tu infraestructura de crecimiento.</p>
@@ -301,7 +303,10 @@ export default function OnboardingForm() {
   return (
     <div className="app-container">
       <div className="header">
-        <div className="header-left">LidiaLabs</div>
+        <div className="header-left">
+          <Image src="/brand-mark.png" alt="LidiaLabs" width={28} height={28} className="brand-mark" priority />
+          <span>LidiaLabs</span>
+        </div>
         <div className="header-right">Onboarding</div>
       </div>
 
