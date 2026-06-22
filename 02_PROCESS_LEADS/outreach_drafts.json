@@ -1,0 +1,26 @@
+[
+    {
+        "lead_name": "Inmobiliaria Real GDL",
+        "niche": "venta de casas",
+        "website": "https://realgdl.com.mx",
+        "score": 88,
+        "qualification_reason": "Sitio web inmobiliario sin agendamiento de visitas interactivo. Requiere enviar un correo electrónico o llamar para agendar visitas a las propiedades. Alta fricción para el comprador.",
+        "outreach_message": "Hola, un gusto saludarlos. Revisando realgdl.com.mx, noté que para coordinar visitas a las propiedades los prospectos deben llamar o mandar un correo y esperar la respuesta de un asesor. En el sector inmobiliario, la velocidad de respuesta define la venta.\n\nPor eso creamos a Lidia, una infraestructura de IA en WhatsApp que atiende a tus prospectos 24/7, califica su interés, les propone horarios disponibles y agenda la visita directamente en el calendario de tus asesores de forma autónoma. ¿Te gustaría agendar una demo corta para verla en acción?"
+    },
+    {
+        "lead_name": "Punto Urbano Inmobiliaria",
+        "niche": "venta de casas",
+        "website": "https://puntourbano.mx",
+        "score": 90,
+        "qualification_reason": "El sitio web requiere rellenar una solicitud de contacto y esperar a que un asesor marque de vuelta para coordinar la visita a la propiedad. Fricción de respuesta inicial alta.",
+        "outreach_message": "Hola, un gusto saludarte. Viendo tu sitio puntourbano.mx, noté que los prospectos interesados en comprar casas deben llenar una solicitud y esperar que un asesor les devuelva la llamada para coordinar la cita.\n\nCon Lidia, automatizamos este primer contacto directamente en WhatsApp. Lidia califica al interesado al instante y agenda la visita de la propiedad en el calendario de tus asesores 24/7. Evitas que el lead se enfríe y aceleras tu pipeline. ¿Conversamos 5 minutos para mostrarte cómo funciona?"
+    },
+    {
+        "lead_name": "Nivara",
+        "niche": "venta de casas",
+        "website": "https://nivara.mx/",
+        "score": 90,
+        "qualification_reason": "Nivara es una desarrolladora inmobiliaria en la CDMX enfocada en la venta de casas y departamentos (preventas y entrega inmediata). Su operación depende críticamente del agendamiento de citas para mostrar los inmuebles a los clientes interesados, como lo demuestran las múltiples opciones de 'Agendar cita' y el apartado principal 'AGENDA TU CITA' en su sitio web. Actualmente, el flujo de agendamiento y contacto ('Agendar cita' / 'Contactar') suele canalizarse a links de Calendly individuales por desarrollo o atención asíncrona de asesores y brokers por WhatsApp manual. Esto introduce una fricción de redirección y espera que puede enfriar el interés de prospectos de ticket alto. Un agente inteligente de WhatsApp como Lidia resolvería esta fricción de manera óptima, interactuando con los interesados, calificándolos y agendando visitas a las propiedades en el calendario de los asesores de forma autónoma 24/7.",
+        "outreach_message": "Hola, un gusto saludarte. Analizando tu sitio nivara.mx y desarrollos como Heriberto Frías o Comercio 51, vi que para agendar una visita a las propiedades redirigen a links de Calendly y para dudas ofrecen un botón de WhatsApp que conecta con un asesor de forma manual.\n\nAunque Calendly ayuda, el prospecto de ticket alto prefiere la inmediatez conversacional. Con Lidia, creamos un asistente de IA en WhatsApp que califica el presupuesto e interés de tus prospectos, responde en menos de 5 segundos 24/7 y agenda la visita directamente en los calendarios de tus brokers de forma autónoma. ¿Te gustaría ver cómo funciona con una demo de 5 minutos?"
+    }
+]

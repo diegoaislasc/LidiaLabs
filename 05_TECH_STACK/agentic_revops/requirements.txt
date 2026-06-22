@@ -1,0 +1,5 @@
+google-antigravity
+google-adk
+requests
+beautifulsoup4
+duckduckgo-search

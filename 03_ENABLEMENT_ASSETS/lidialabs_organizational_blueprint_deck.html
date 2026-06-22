@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LidiaLabs · Estructura Organizacional</title>
+  <!-- Google Fonts: Syncopate (Retrofuturista elegante) y Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Syncopate', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --color-bg: #000000; /* Negro absoluto analógico */
+      --color-text-main: #ffffff; /* Blanco de alto contraste */
+      --color-text-muted: #949499; /* Gris analógico apagado */
+      --color-text-light: #515154;
+      --border-color: rgba(255, 255, 255, 0.12); /* Borde sutil */
+      --card-bg: rgba(5, 5, 8, 0.85); /* Caja de cristal súper oscura */
+      --color-accent: #ffffff; /* Blanco puro para acentos */
+      --color-accent-alt: #d1d1d6; /* Gris claro */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--color-bg);
+      /* Combine fine SVG grain pattern with subtle wine-red radial gradients */
+      background-image: 
+        /* 1. Fine SVG grain pattern */
+        url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='5' r='0.35' fill='%236e1324' opacity='0.75'/%3E%3Ccircle cx='15' cy='11' r='0.3' fill='%233a0c14' opacity='0.9'/%3E%3Ccircle cx='9' cy='20' r='0.4' fill='%235c0f1e' opacity='0.8'/%3E%3Ccircle cx='21' cy='17' r='0.35' fill='%238c1a30' opacity='0.65'/%3E%3Ccircle cx='1' cy='12' r='0.25' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='7' cy='3' r='0.25' fill='%23ffffff' opacity='0.25'/%3E%3Ccircle cx='11' cy='16' r='0.25' fill='%23ffffff' opacity='0.18'/%3E%3Ccircle cx='18' cy='8' r='0.3' fill='%23ffffff' opacity='0.22'/%3E%3Ccircle cx='22' cy='22' r='0.2' fill='%23ffffff' opacity='0.28'/%3E%3Ccircle cx='13' cy='23' r='0.25' fill='%23ffffff' opacity='0.18'/%3E%3C/svg%3E"),
+        /* 2. Wine-red micro-spots and subtle glows */
+        radial-gradient(circle at 15% 15%, rgba(110, 19, 36, 0.12) 0%, rgba(0, 0, 0, 0) 45%),
+        radial-gradient(circle at 85% 85%, rgba(92, 15, 30, 0.14) 0%, rgba(0, 0, 0, 0) 50%),
+        radial-gradient(circle at 50% 50%, rgba(58, 12, 20, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+      background-size: 16px 16px, 100% 100%, 100% 100%, 100% 100%;
+      color: var(--color-text-main);
+      overflow-x: hidden;
+      padding: 5vh 5vw;
+      position: relative;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact; /* Forzar colores y fondos en Chrome/Safari */
+      print-color-adjust: exact; /* Estándar W3C para conservar fondos en PDF */
+    }
+
+    .deck-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .slide {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0px; /* Bordes rectos e industriales crudos */
+      padding: 70px 90px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      position: relative;
+      break-inside: avoid;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.02);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+
+    .slide-logo {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .slide-logo span {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-left: 8px;
+    }
+
+    .super-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      margin-bottom: 35px;
+      color: #ffffff;
+    }
+
+    h2 mark {
+      background: none;
+      color: #ffffff;
+      font-style: normal;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    p strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .col-title {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .vector-list {
+      list-style: none;
+    }
+
+    .vector-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .vector-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--color-text-main);
+      font-weight: 700;
+    }
+
+    .vector-list li strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .accounting-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .accounting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .accounting-desc {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .accounting-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 40px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.7rem;
+      color: var(--color-text-light);
+    }
+
+    .slide.cover {
+      justify-content: center;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .slide.cover h1 {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .slide.cover .subtitle {
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-text-muted);
+      max-width: 750px;
+    }
+
+    /* ESTILOS DE IMPRESIÓN ALINEADOS AL MODO OSCURO */
+    @media print {
+      @page {
+        margin: 0;
+        size: landscape;
+      }
+      
+      body {
+        padding: 0;
+        background-color: #000000 !important;
+        background-image: 
+          url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='5' r='0.35' fill='%236e1324' opacity='0.75'/%3E%3Ccircle cx='15' cy='11' r='0.3' fill='%233a0c14' opacity='0.9'/%3E%3Ccircle cx='9' cy='20' r='0.4' fill='%235c0f1e' opacity='0.8'/%3E%3Ccircle cx='21' cy='17' r='0.35' fill='%238c1a30' opacity='0.65'/%3E%3Ccircle cx='1' cy='12' r='0.25' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='7' cy='3' r='0.25' fill='%23ffffff' opacity='0.25'/%3E%3Ccircle cx='11' cy='16' r='0.25' fill='%23ffffff' opacity='0.18'/%3E%3Ccircle cx='18' cy='8' r='0.3' fill='%23ffffff' opacity='0.22'/%3E%3Ccircle cx='22' cy='22' r='0.2' fill='%23ffffff' opacity='0.28'/%3E%3Ccircle cx='13' cy='23' r='0.25' fill='%23ffffff' opacity='0.18'/%3E%3C/svg%3E"),
+          radial-gradient(circle at 15% 15%, rgba(110, 19, 36, 0.12) 0%, rgba(0, 0, 0, 0) 45%),
+          radial-gradient(circle at 85% 85%, rgba(92, 15, 30, 0.14) 0%, rgba(0, 0, 0, 0) 50%),
+          radial-gradient(circle at 50% 50%, rgba(58, 12, 20, 0.08) 0%, rgba(0, 0, 0, 0) 60%) !important;
+        background-repeat: repeat, no-repeat, no-repeat, no-repeat !important;
+        background-size: 16px 16px, 100% 100%, 100% 100%, 100% 100% !important;
+        color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .slide {
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        box-shadow: none !important;
+        background: #000000 !important;
+        min-height: 100vh;
+        width: 100vw;
+        padding: 40mm 50mm;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      h1, h2, h3, .col-title, strong, .slide-logo {
+        color: #ffffff !important;
+      }
+
+      h2 mark {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+      }
+
+      p, li, .accounting-desc, .slide-logo span, .super-title, .accounting-val, .slide-footer span {
+        color: #949499 !important;
+      }
+
+      .accounting-row {
+        border-color: rgba(255, 255, 255, 0.12) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="deck-container">
+
+    <!-- SLIDE 1: PORTADA -->
+    <div class="slide cover">
+      <h1>LidiaLabs</h1>
+      <p class="subtitle">Estructura y Participación</p>
+    </div>
+
+    <!-- SLIDE 2: ESTRUCTURA -->
+    <div class="slide">
+      <div>
+        <h2>Estructura</h2>
+        <div class="two-col">
+          <div>
+            <h3 class="col-title">Arquitectura y Dirección</h3>
+            <ul class="vector-list">
+              <li><strong>Diego Islas (CEO):</strong> Dirección ejecutiva general y automatización interna.</li>
+              <li><strong>Federico Elizondo (CTO):</strong> Ingeniería de software, escalabilidad técnica y propiedad intelectual.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="col-title">Distribución y Capital</h3>
+            <ul class="vector-list">
+              <li><strong>Toño Botello (CCO):</strong> Distribución Estratégica y Dirección Comercial. Apertura y cierre de cuentas clave.</li>
+              <li><strong>Eugenio Elizondo (CPO & Advisor):</strong> Estratega de producto y consejero de capital.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>LIDIALABS</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: PARTICIPACIÓN -->
+    <div class="slide">
+      <div>
+        <h2>Participación</h2>
+        <div class="two-col">
+          <div>
+            <h3 class="col-title">Estructura Accionaria</h3>
+            <ul class="vector-list">
+              <li><strong>Operadores (Diego & Federico):</strong> Mayoría accionaria y control técnico.</li>
+              <li><strong>Distribución (Toño):</strong> Equity condicionado a tracción.</li>
+              <li><strong>Producto & Advisor (Eugenio):</strong> Estrategia de producto y capital.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="col-title">Esquema de Vesting</h3>
+            <ul class="vector-list">
+              <li><strong>Fase 1 (Piloto):</strong> Liberación inicial con primeros clientes.</li>
+              <li><strong>Fase 2 (Escala):</strong> Liberación por volumen crítico.</li>
+              <li><strong>Fase 3 (Enterprise):</strong> Liberación por cuentas institucionales.</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 40px; color: var(--color-text-light); text-align: center; font-family: var(--font-mono); letter-spacing: 0.05em;">
+          [ PORCENTAJES Y DISPARADORES A DEFINIR EN CONJUNTO ]
+        </p>
+      </div>
+      <div class="slide-footer">
+        <span>LIDIALABS</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: SIGUIENTES PASOS -->
+    <div class="slide">
+      <div>
+        <h2>Siguientes Pasos</h2>
+        <div class="two-col">
+          <div>
+            <h3 class="col-title">Fase 1: Validación</h3>
+            <ul class="vector-list">
+              <li><strong>Alineación Comercial:</strong> Acuerdo sobre comisiones y vesting con Toño.</li>
+              <li><strong>Piloto Crítico:</strong> Migración de 3 médicos clave para validar conversión.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="col-title">Fase 2: Estructura</h3>
+            <ul class="vector-list">
+              <li><strong>Acuerdo de Socios:</strong> Formalización legal y gobernanza de capital.</li>
+              <li><strong>Sistemas:</strong> Automatización de procesos internos de LidiaLabs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>LIDIALABS</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

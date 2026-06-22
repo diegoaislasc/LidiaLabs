@@ -1,0 +1,86 @@
+{
+  "negocio": {
+    "nombre": "Empire Dance Center",
+    "giro": "Academia de baile y danza",
+    "direccion": "Monterrey, N.L. (Dirección exacta a confirmar con cliente)",
+    "ciudad": "Monterrey, N.L.",
+    "ubicacionLidia": "Estamos ubicados en Monterrey, N.L. Te enviaremos la ubicación exacta de GPS por este chat al confirmar tu clase muestra."
+  },
+  "horarios": {
+    "lunes": "16:00 - 21:00",
+    "martes": "16:00 - 21:00",
+    "miercoles": "16:00 - 21:00",
+    "jueves": "16:00 - 21:00",
+    "viernes": "16:00 - 21:00",
+    "sabado": "10:00 - 14:00",
+    "domingo": "Cerrado",
+    "duracionCita": "1 hora (Duración estándar de clase)",
+    "descansos": "N/A"
+  },
+  "servicios": [
+    {
+      "servicio": "Clase Muestra / Prueba",
+      "precio": "$0 (Gratuita para alumnos de primera vez)",
+      "duracion": "1 hora",
+      "notas": "Requiere registro previo. Disponible para todas las disciplinas según nivel."
+    },
+    {
+      "servicio": "Mensualidad - Disciplina Individual",
+      "precio": "$850 (Aproximado, a confirmar por cliente)",
+      "duracion": "Acceso mensual",
+      "notes": "Incluye 2 clases por semana de la disciplina seleccionada."
+    },
+    {
+      "servicio": "Inscripción Anual",
+      "precio": "$500 (Aproximado)",
+      "duracion": "Anual",
+      "notes": "Pago único anual para derecho de piso y seguro básico."
+    }
+  ],
+  "faqs": [
+    {
+      "pregunta": "¿Qué disciplinas o estilos de baile enseñan?",
+      "respuesta": "Ofrecemos una variedad de estilos que incluyen Danzas Urbanas (Hip Hop, Reggaetón), Ritmos Latinos (Salsa, Bachata), K-Pop, Jazz y Lírico/Contemporáneo. ¿Hay alguna disciplina en particular que te llame la atención?"
+    },
+    {
+      "pregunta": "¿Tienen clases para principiantes absolutos?",
+      "respuesta": "¡Sí, totalmente! Contamos con grupos especiales para personas que nunca han tomado clases de baile. Te enseñamos desde cero paso a paso en un ambiente seguro y divertido."
+    },
+    {
+      "pregunta": "¿Qué edades aceptan en la academia?",
+      "respuesta": "Tenemos grupos para todas las edades divididos en categorías: Infantil (Kids), Juvenil (Teens) y Adultos. ¿Para qué edad estás buscando clases hoy?"
+    },
+    {
+      "pregunta": "¿Cómo puedo agendar una clase muestra?",
+      "respuesta": "Es muy sencillo. Con gusto puedo verificar disponibilidad y agendar tu clase de prueba hoy mismo. Solo necesito que me indiques la disciplina de tu interés y la edad del alumno."
+    }
+  ],
+  "politicas": {
+    "cancelacion": "Favor de avisar con al menos 2 horas de anticipación si necesitas reprogramar tu clase de prueba.",
+    "llegadasTarde": "Tolerancia máxima de 10 minutos para ingresar a la clase (esto es por seguridad y calentamiento físico del alumno).",
+    "formasPago": "Aceptamos efectivo, transferencia interbancaria y pago con tarjeta en recepción.",
+    "requisitosPrimeraCita": "Asistir con ropa deportiva/cómoda, tenis limpios, una toalla facial y agua para mantenerte hidratado.",
+    "otras": "El acceso a la clase muestra está sujeto a disponibilidad de cupo en el grupo correspondiente."
+  },
+  "contacto": {
+    "nombre": "Administración Empire Dance Center",
+    "telefono": "",
+    "email": "contacto@empiredancecenter.mx"
+  },
+  "personalidad": {
+    "tono": "Cálida y profesional",
+    "preciosWhatsApp": "Sí, todos",
+    "especificaPrecios": "",
+    "nuncaDecir": "Nunca digas que no hay cupo sin antes verificar el sistema, no des descuentos no autorizados, no garantices resultados sin constancia del alumno.",
+    "frasesClave": "¡Con gusto!, ¡Qué emoción que quieras bailar con nosotros!, Te esperamos en la pista."
+  },
+  "metaBusiness": {
+    "estado": "Sí tengo Meta Business",
+    "numeroWhatsapp": "",
+    "accesoSuite": "Sí"
+  },
+  "recordatorios": [
+    "24 horas antes de la cita",
+    "2 horas antes de la cita"
+  ]
+}

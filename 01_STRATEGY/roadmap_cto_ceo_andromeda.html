@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LidiaLabs · Propuesta de Roadmap y Arquitectura de Canal</title>
+  <!-- Google Fonts: Inter (Sans-Serif) & Space Mono (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* VARIABLES / PALETA DE COLORES */
+    :root {
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'Space Mono', Courier, monospace;
+      
+      --color-bg: #ffffff;
+      --color-text-main: #111111;
+      --color-text-muted: #666666;
+      --color-text-light: #999999;
+      
+      --border-color: #e5e5e5;
+      --border-color-dark: #111111;
+      
+      --spacing-xs: 8px;
+      --spacing-sm: 16px;
+      --spacing-md: 24px;
+      --spacing-lg: 48px;
+      --spacing-xl: 80px;
+    }
+
+    /* ESTILOS GLOBALES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      padding: var(--spacing-xl) 10%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* CABECERA (HEADER) */
+    header {
+      border-bottom: 2px solid var(--border-color-dark);
+      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .brand-logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    
+    .brand-logo span {
+      font-family: var(--font-mono);
+      font-weight: 400;
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+    }
+
+    .doc-id {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SUPER TÍTULO Y HERO TITLE */
+    .super-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: var(--spacing-xs);
+      display: block;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: var(--spacing-lg);
+      color: var(--color-text-main);
+      max-width: 900px;
+    }
+
+    /* GRID DE METADATOS */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .meta-item {
+      padding: var(--spacing-md) var(--spacing-sm);
+      border-right: 1px solid var(--border-color);
+    }
+
+    .meta-item:last-child {
+      border-right: none;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .meta-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      line-height: 1.3;
+    }
+    
+    .meta-value.tech {
+      font-family: var(--font-mono);
+      font-weight: 400;
+    }
+
+    /* SECCIONES Y MAQUETACIÓN MODULAR */
+    section {
+      margin-bottom: var(--spacing-xl);
+      break-inside: avoid;
+    }
+
+    .section-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    h2 .section-number {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 1px solid var(--border-color);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* TEXTO Y COMPORTAMIENTO */
+    p {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      max-width: 750px;
+    }
+
+    p strong {
+      color: var(--color-text-main);
+    }
+
+    /* RESTRICCIONES Y DECLARACIÓN DE RIESGO CERO */
+    .callout-box {
+      border-left: 3px solid var(--color-text-main);
+      padding: var(--spacing-sm) var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      background-color: #fafdff;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-style: italic;
+      color: var(--color-text-main);
+    }
+
+    /* DISEÑO EN 2 COLUMNAS (LAYOUT ANALÍTICO) */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-md);
+    }
+
+    .col-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-main);
+      margin-bottom: var(--spacing-sm);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--spacing-xs);
+    }
+
+    /* LISTAS VECTORIALES */
+    .vector-list {
+      list-style: none;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .vector-list li {
+      position: relative;
+      padding-left: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+
+    .vector-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--color-text-light);
+      font-weight: bold;
+    }
+
+    .vector-list li strong {
+      color: var(--color-text-main);
+    }
+
+    /* LISTAS CONTABLES (ACCOUNTING LAYOUT) */
+    .accounting-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      margin: var(--spacing-md) 0;
+    }
+
+    .accounting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 4px;
+    }
+
+    .accounting-desc {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .accounting-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--color-text-main);
+      font-size: 0.95rem;
+    }
+
+    /* CODE / CONTRACT SCHEMAS */
+    pre {
+      background-color: #f7f7f7;
+      border: 1px solid var(--border-color);
+      padding: var(--spacing-sm);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin-bottom: var(--spacing-md);
+      border-radius: 3px;
+    }
+
+    /* PRINT LAYOUT (Cmd+P) */
+    @media print {
+      @page {
+        margin: 0;
+        size: portrait;
+      }
+      
+      body {
+        padding: 20mm 20mm;
+        font-size: 9pt;
+        color: #000;
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      
+      header {
+        margin-bottom: 10mm;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10mm;
+      }
+      
+      .metadata-grid {
+        margin-bottom: 12mm;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+      }
+      
+      section {
+        margin-bottom: 12mm;
+        break-inside: avoid;
+      }
+      
+      .two-col {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10mm;
+      }
+      
+      pre {
+        background-color: #fafafa !important;
+        border: 1px solid #ddd !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header>
+    <div class="brand-logo">LidiaLabs <span>/ GTM-ST</span></div>
+    <div class="doc-id">DOC-2026-PM02</div>
+  </header>
+
+  <!-- SUPER TÍTULO Y HERO TITLE -->
+  <span class="super-title">MEMORÁNDUM DE PRODUCTO & ARQUITECTURA</span>
+  <h1>Roadmap de Integración Multitenant para el Canal de Agencias (Caso Andrómeda)</h1>
+
+  <!-- GRID DE METADATOS -->
+  <div class="metadata-grid">
+    <div class="meta-item">
+      <span class="meta-label">DE PARTE DE:</span>
+      <span class="meta-value">COO<br>LidiaLabs Dirección</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">PARA:</span>
+      <span class="meta-value">Federico E. (CTO)<br>Eugenio E. (CEO)</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">REFERENCIA:</span>
+      <span class="meta-value">Propuesta GTM & Alianzas Andrómeda</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">EMISIÓN / TIPO:</span>
+      <span class="meta-value tech">2026.06.01<br>ESTRATEGIA</span>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 01: VISIÓN GENERAL -->
+  <section>
+    <div class="section-header">
+      <h2><span class="section-number">01</span> Visión General & Filosofía AI-Native</h2>
+      <span class="section-tag">Estrategia CEO</span>
+    </div>
+    <p>
+      Este documento describe la evolución de <strong>LidiaLabs</strong> hacia un modelo <strong>B2B2B (Business-to-Business-to-Business)</strong> mediante alianzas con agencias de marketing y RevOps. <strong>Andrómeda</strong> será el inquilino pionero de esta infraestructura, permitiéndonos expandir el alcance de nuestro agente conversacional sin incrementar el costo de adquisición de clientes (CAC).
+    </p>
+    
+    <div class="callout-box">
+      <p>El objetivo principal del canal es habilitar un modelo de distribución de "Cero Fricción" donde el onboarding técnico y la calibración del agente de IA son delegados al distribuidor comercial.</p>
+    </div>
+
+    <div class="two-col" style="margin-top: var(--spacing-md);">
+      <div>
+        <h3 class="col-title">Principios AI-Native Greenfield</h3>
+        <ul class="vector-list">
+          <li><strong>Agéntico por Diseño:</strong> Los procesos de venta se rediseñan desde el origen en torno al agente autónomo, evitando el enfoque bolt-on (insertar IA en procesos tradicionales para humanos).</li>
+          <li><strong>Orquestación vs Ejecución:</strong> Los operadores de la agencia pasan de realizar tareas manuales repetitivas a actuar como directores orquestadores de múltiples instancias del agente de IA en paralelo.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="col-title">Apalancamiento de Infraestructura</h3>
+        <ul class="vector-list">
+          <li><strong>Infraestructura Prestada:</strong> Construcción eficiente sobre APIs consolidadas de comunicación y procesamiento cognitivo en la nube, garantizando un costo marginal mínimo por cuenta activa.</li>
+          <li><strong>Sense-Making Humano:</strong> Priorización estricta del roadmap orientada a la validación empírica y estratégica del negocio por encima del desarrollo de código no probado.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 02: RACIONAL ESTRATÉGICO -->
+  <section>
+    <div class="section-header">
+      <h2><span class="section-number">02</span> Racional Estratégico del Modelo</h2>
+      <span class="section-tag">Decisión de Negocio</span>
+    </div>
+    
+    <p>
+      El modelo de **Distribución Mayorista con Split de Setup** fue seleccionado sobre alternativas de venta directa o marca blanca inmediata debido a tres factores críticos de escala:
+    </p>
+
+    <div class="two-col">
+      <div>
+        <h3 class="col-title">Apalancamiento Operativo & CAC Fricción</h3>
+        <ul class="vector-list">
+          <li><strong>Outsourcing de Soporte y Delivery:</strong> Al ceder el 70% del Setup Fee a Andrómeda, delegamos el esfuerzo manual de configuración e integración (prompts, calendarios), manteniendo a LidiaLabs con una estructura esbelta.</li>
+          <li><strong>CAC de Canal a Cero:</strong> La fuerza de ventas de Andrómeda asume el costo de adquisición de prospectos, apalancando su base instalada de médicos, corporativos y PYMEs.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="col-title">Sinergia y Retención (Lock-in)</h3>
+        <ul class="vector-list">
+          <li><strong>Bundle Indiscutible (Ads + IA):</strong> Al empaquetar la IA conversacional con sus campañas de marketing, Andrómeda asegura tasas de conversión inmediatas, eliminando el riesgo de que el cliente culpe a las campañas por la falta de atención.</li>
+          <li><strong>Tiers de Incentivo al Volumen:</strong> El descuento progresivo (20% a 50%) estimula a la agencia a escalar rápidamente para maximizar su propio margen de reventa recurrente.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 03: ROADMAP DE INTEGRACIÓN -->
+  <section>
+    <div class="section-header">
+      <h2><span class="section-number">03</span> Fases del Product Roadmap</h2>
+      <span class="section-tag">Desarrollo Evolutivo</span>
+    </div>
+    
+    <div class="two-col">
+      <div>
+        <h3 class="col-title">Fase 1: Integración de Leads & Demo Sandbox (Semana 1-2)</h3>
+        <ul class="vector-list">
+          <li><strong>API de Inyección:</strong> Desarrollo de un endpoint seguro para recibir prospectos de formularios (ej. Meta Leads) y activar respuesta inmediata.</li>
+          <li><strong>Vista Consolidadora:</strong> Panel básico con etiqueta <code>partner:andromeda</code> para monitoreo de chats de forma pasiva por la agencia.</li>
+          <li><strong>Demo Sandbox:</strong> Instancia demo dedicada para la fuerza de ventas de Andrómeda.</li>
+          <li><strong>Bucle de Feedback Manual:</strong> Envío de formularios manuales nativos de LidiaLabs a los primeros usuarios piloto para recopilar retroalimentación cualitativa mientras se productiza la solución.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="col-title">Fase 2: Consola de Administración / Reseller (Semana 3-6)</h3>
+        <ul class="vector-list">
+          <li><strong>Provisionamiento Autónomo:</strong> Consola para que la agencia cree, suspenda y modifique cuentas de clientes finales de forma autónoma.</li>
+          <li><strong>Wholesale Billing:</strong> Consolidación mensual de costos de API de WhatsApp y consumo de tokens bajo una única factura para la agencia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 04: ARQUITECTURA DE SOLUCIONES Y VALOR DE NEGOCIO -->
+  <section>
+    <div class="section-header">
+      <h2><span class="section-number">04</span> Arquitectura de Soluciones & Habilitadores de Negocio</h2>
+      <span class="section-tag">Análisis CTO & CEO</span>
+    </div>
+    
+    <p>
+      La integración técnica está diseñada bajo principios de arquitectura limpia para minimizar el tiempo de desarrollo del equipo de ingeniería (CTO) y maximizar el impacto en el pipeline comercial (CEO).
+    </p>
+
+    <div class="two-col">
+      <div>
+        <h3 class="col-title">Arquitectura Técnica (CTO)</h3>
+        <ul class="vector-list">
+          <li><strong>Aislamiento Multitenant (RLS):</strong> Implementación de Row-Level Security en la base de datos para separar de forma lógica y hermética la data de cada cliente final.</li>
+          <li><strong>API de Ingesta Asíncrona:</strong> Un endpoint genérico de inyección de leads desacoplado del motor conversacional mediante una cola de mensajería (Redis Queue).</li>
+          <li><strong>SSL Dinámico y CNAME Proxy:</strong> Un proxy inverso encargado del enrutamiento dinámico de dominios para habilitar marca blanca sin requerir redespliegues.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="col-title">Necesidad y Retorno de Negocio (CEO)</h3>
+        <ul class="vector-list">
+          <li><strong>Cero Riesgo de Seguridad y Cumplimiento:</strong> El aislamiento hermético por base de datos garantiza la confidencialidad de la información médica o corporativa, blindando a LidiaLabs ante demandas de privacidad.</li>
+          <li><strong>Garantía de Conversión (Speed to Lead):</strong> Al procesar los leads de forma asíncrona, Lidia inicia la conversación en WhatsApp en <5 segundos, capturando al lead cuando su intención de compra es máxima.</li>
+          <li><strong>Efecto Lock-In (Retención del Cliente):</strong> Al delegar a la agencia la administración del CNAME de su marca blanca, los clientes se vuelven altamente dependientes de la infraestructura combinada de Andrómeda y Lidia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 05: UNIT ECONOMICS -->
+  <section>
+    <div class="section-header">
+      <h2><span class="section-number">05</span> Unit Economics & Tiers Mayoristas</h2>
+      <span class="section-tag">Estructura Comercial</span>
+    </div>
+    
+    <p>
+      El modelo de distribución protege nuestros costos de cómputo y APIs de comunicación externa, asegurando un margen saludable incluso en volúmenes masivos:
+    </p>
+
+    <div class="accounting-list">
+      <div class="accounting-row">
+        <span class="accounting-desc">Costo base mensual estimado por cuenta de LidiaLabs (Tokens + Serverless)</span>
+        <span class="accounting-val">$8.00 USD</span>
+      </div>
+      <div class="accounting-row">
+        <span class="accounting-desc">Precio comercial público del servicio</span>
+        <span class="accounting-val">$49.00 USD</span>
+      </div>
+      <div class="accounting-row">
+        <span class="accounting-desc">Tier 1: 1 a 10 cuentas activas (20% descuento)</span>
+        <span class="accounting-val">$39.20 USD / cuenta</span>
+      </div>
+      <div class="accounting-row">
+        <span class="accounting-desc">Tier 2: 11 a 50 cuentas activas (35% descuento)</span>
+        <span class="accounting-val">$31.85 USD / cuenta</span>
+      </div>
+      <div class="accounting-row">
+        <span class="accounting-desc">Tier 3: 51+ cuentas activas (50% descuento)</span>
+        <span class="accounting-val">$24.50 USD / cuenta</span>
+      </div>
+      <div class="accounting-row">
+        <span class="accounting-desc">Margen bruto proyectado en Tier 3 (Elite)</span>
+        <span class="accounting-val">67.3%</span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
