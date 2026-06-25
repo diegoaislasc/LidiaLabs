@@ -19,8 +19,8 @@ Para este piloto, utilizaremos campañas de **Clientes Potenciales (Conversiones
 
 Cuando el usuario da clic en el anuncio, WhatsApp se abrirá con uno de los siguientes mensajes predefinidos. Lidia estará programada para reconocerlos y activar el flujo de calificación correspondiente.
 
-*   **Trigger Propiedad 1:** *"Hola Vanessa, me interesó la casa que vi en el anuncio y quiero ver más fotos y agendar una visita."*
-*   **Trigger Genérico:** *"Hola, vi sus propiedades en Facebook. Me gustaría saber si tienen opciones disponibles y agendar una cita."*
+*   **Trigger Propiedad (Castaños del Vergel):** *"Hola Vanessa, me interesa la residencia en Castaños del Vergel que vi en Facebook."*
+*   **Trigger Genérico:** *"Hola Vanessa, vi tus propiedades en Facebook y me gustaría recibir información."*
 
 ---
 
@@ -103,7 +103,7 @@ Un anuncio directo enfocado en el espacio social de convivencia familiar cotidia
 
 Cuando los prospectos den clic en cualquiera de estos 3 anuncios, iniciarán el chat con Lidia con el siguiente mensaje automático:
 
-> *"Hola Vanessa, me interesa la residencia en Castaños del Vergel que vi en Facebook. Me gustaría conocer los detalles y agendar una visita."*
+> *"Hola Vanessa, me interesa la residencia en Castaños del Vergel que vi en Facebook."*
 
-Lidia reconocerá esta propiedad de forma inmediata, activando el vetting específico para Carretera Nacional (Monterrey) y el perfilamiento correspondiente.
+Lidia reconocerá esta propiedad de forma inmediata, saludando cálidamente al lead (ej. *"¡Buenas tardes! Claro, ¿gustas que te comparta los detalles de la casa?"*) para iniciar una conversación fluida antes de guiarlo hacia las preguntas de calificación de presupuesto/crédito y agendar la visita en el calendario.
 
