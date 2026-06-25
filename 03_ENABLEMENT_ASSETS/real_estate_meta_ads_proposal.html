@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LidiaLabs - Castaños del Vergel Campaign Proposal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap');
+        
+        :root {
+            --text-main: #111111;
+            --text-muted: #737373;
+            --border-color: #eaeaea;
+            --bg-color: #ffffff;
+            --accent-light: #b0b0b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Cabecera (Header) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 64px;
+        }
+
+        .header-left strong {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-right span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .header-right strong {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 64px;
+        }
+
+        .supertitle {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin: 0 0 24px 0;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0;
+        }
+
+        .hero p strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Metadata Section */
+        .metadata-section {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 2fr;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .meta-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .meta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+        }
+
+        .meta-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .meta-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .meta-grid-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 24px;
+        }
+
+        /* Secciones Body */
+        .section-container {
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            margin-top: 48px;
+        }
+
+        .section-container:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 24px;
+        }
+
+        .section-title-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .section-header .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--border-color);
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .section-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Tipografía Body */
+        .lead-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+
+        .muted-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 24px 0;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* 2 Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .col-header {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+
+        /* Custom Lists */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        ul.custom-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        ul.custom-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .metadata-section {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        /* Print Optimized Styles */
+        @media print {
+            @page {
+                size: portrait;
+                margin: 0;
+            }
+            
+            body {
+                padding: 15mm 25mm;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .document-container {
+                max-width: 100%;
+            }
+
+            .metadata-section {
+                display: grid !important;
+                grid-template-columns: 1.5fr 1.5fr 2fr !important;
+                gap: 32px !important;
+            }
+
+            .two-col {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 48px !important;
+            }
+
+            h1 {
+                font-size: 5rem !important;
+            }
+
+            .section-container {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <strong>LidiaLabs</strong>
+            </div>
+            <div class="header-right">
+                <span>CAMPAIGN PROPOSAL</span>
+                <strong>DOC-2026-MKT01</strong>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="supertitle">PROPUESTA DE ESTRATEGIA PUBLICITARIA</div>
+            <h1>Castaños<br>del Vergel</h1>
+            <p>Estructura de la campaña de tráfico en Meta Ads diseñada específicamente para la residencia en Carretera Nacional. <strong>El objetivo es generar citas, no clics.</strong></p>
+        </div>
+
+        <!-- Metadata Grid -->
+        <div class="metadata-section">
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">DE PARTE DE</span>
+                    <span class="meta-title">LidiaLabs</span>
+                    <div class="meta-text">
+                        Dirección Comercial<br>
+                        Infraestructura Autónoma<br>
+                        Monterrey, N.L.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">PREPARADO PARA</span>
+                    <span class="meta-title">Vanessa Osorno</span>
+                    <div class="meta-text">
+                        Dorado 5 Real Estate<br>
+                        Piloto de Escala
+                    </div>
+                </div>
+            </div>
+
+            <div class="meta-col">
+                <div class="meta-group" style="margin-bottom: 8px;">
+                    <span class="meta-label">PROPIEDAD</span>
+                    <span class="meta-text">Residencia Castaños del Vergel</span>
+                </div>
+                <div class="meta-grid-right">
+                    <div class="meta-group">
+                        <span class="meta-label">EMISIÓN</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">25 jun 2026</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">ESTADO</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">Aprobación</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">CÓDIGO</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">MKT-RE-CV</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">CANAL</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">Meta Ads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Sections -->
+        
+        <!-- Section 01 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">01</span>
+                    <h2>El Enfoque del Tráfico</h2>
+                </div>
+                <span class="section-tag">CLICK-TO-WHATSAPP (CTWA)</span>
+            </div>
+            <p class="lead-text">Eliminamos las páginas intermedias para conectar a los interesados directamente con Lidia en WhatsApp en un solo clic.</p>
+            <p class="muted-text">En propiedades de alto ticket en Monterrey, la inmediatez conversacional marca la diferencia. Cuando un prospecto hace clic en nuestro anuncio en Facebook o Instagram, se abre un chat de WhatsApp con un mensaje preestablecido. Lidia responde en segundos, filtra al lead en base a presupuesto y crédito, y agenda la visita a la propiedad sin fricción manual.</p>
+        </div>
+
+        <!-- Section 02 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">02</span>
+                    <h2>Estructura de Publicaciones (Anuncios)</h2>
+                </div>
+                <span class="section-tag">TESTING A/B CREATIVO</span>
+            </div>
+            <p class="lead-text">Utilizaremos las 21 fotos reales cargadas por Vanessa en 3 anuncios distintos para encontrar la variante más rentable.</p>
+            
+            <div class="two-col" style="margin-top: 24px;">
+                <div>
+                    <div class="col-header">ANUNCIO 1: EL CARRUSEL (RECORRIDO)</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Muestra los interiores y exteriores simulando una visita física secuencial. El usuario avanza deslizando:</p>
+                    <ul class="custom-list">
+                        <li><strong>Portada (Card 1):</strong> Fachada principal de la casa.</li>
+                        <li><strong>Card 2:</strong> Sala y comedor con ventanal al jardín.</li>
+                        <li><strong>Card 3:</strong> Cocina moderna equipada.</li>
+                        <li><strong>Card 4:</strong> Recámara principal (piso tipo madera).</li>
+                        <li><strong>Card 5:</strong> Balcón con vistas a las montañas.</li>
+                        <li><strong>Card 6:</strong> Vestidor / walk-in closet.</li>
+                        <li><strong>Card 7:</strong> Jardín / patio privado.</li>
+                        <li><strong>Card 8:</strong> Alberca común de la Casa Club.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">ANUNCIO 2: EL REEL (ESTILO DE VIDA)</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Video corto de 15 segundos con transiciones fluidas y especificaciones de alta gama destacadas en pantalla:</p>
+                    <ul class="custom-list">
+                        <li><strong>Secuencia visual:</strong> Fachada $\rightarrow$ Doble altura interior $\rightarrow$ Cocina $\rightarrow$ Recámara principal y terraza $\rightarrow$ Amenidades del fraccionamiento (Alberca, canchas y Casa Club).</li>
+                        <li><strong>Propósito:</strong> Capturar tráfico en la sección de Reels y Stories con un costo por lead sustancialmente menor.</li>
+                    </ul>
+                    
+                    <div class="col-header" style="margin-top: 24px;">ANUNCIO 3: IMAGE POST (HERO SHOT)</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Anuncio estático clásico enfocado en el diseño interior de la propiedad.</p>
+                    <ul class="custom-list">
+                        <li><strong>Visual:</strong> Área social (sala-comedor) con vista al jardín, apelando a la luminosidad y calidez.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 03 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">03</span>
+                    <h2>Activación de Lidia (Trigger)</h2>
+                </div>
+                <span class="section-tag">ENTRADA AGÉNTICA</span>
+            </div>
+            
+            <p class="lead-text">Cuando un usuario haga clic en cualquier anuncio, se enviará el siguiente mensaje de bienvenida predefinido a WhatsApp:</p>
+
+            <div style="background-color: #fafafa; border: 1px solid var(--border-color); padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; margin: 24px 0; color: var(--text-main); border-radius: 4px;">
+                "Hola Vanessa, me interesa la residencia en Castaños del Vergel que vi en Facebook. Me gustaría conocer los detalles y agendar una visita."
+            </div>
+
+            <p class="muted-text" style="font-size: 0.85rem;">Al detectar este mensaje exacto, Lidia saltará la fase de saludo general y activará el **protocolo específico para Castaños del Vergel**. Empezará respondiendo con la galería completa de fotos y de inmediato evaluará al cliente (presupuesto y tipo de crédito) antes de agendar la llamada en el calendario de Vanessa.</p>
+        </div>
+
+        <!-- Section 04 -->
+        <div class="section-container" style="border-bottom: 1px solid var(--border-color); padding-bottom: 48px; margin-bottom: 48px;">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">04</span>
+                    <h2>Plan de Implementación</h2>
+                </div>
+                <span class="section-tag">PRÓXIMOS PASOS</span>
+            </div>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">REQUERIMIENTO TÉCNICO</div>
+                    <ul class="custom-list">
+                        <li><strong>Vincular WhatsApp:</strong> Conectar el número activo con Lidia a la cuenta publicitaria de Meta de Vanessa.</li>
+                        <li><strong>Montar Anuncios:</strong> Configurar el grupo de anuncios con la segmentación de Guadalajara/Monterrey Carretera Nacional y subir los 3 formatos creativos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">FOCALIZACIÓN DEL PILOTO</div>
+                    <ul class="custom-list">
+                        <li><strong>Encendido:</strong> Lanzar campaña con presupuesto diario controlado.</li>
+                        <li><strong>Optimización Conversacional:</strong> Ajustar los guardrails y respuestas de Lidia semanalmente según el feedback de Vanessa sobre las citas generadas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
