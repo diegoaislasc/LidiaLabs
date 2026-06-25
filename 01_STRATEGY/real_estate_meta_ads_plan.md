@@ -58,19 +58,44 @@ Cuando el usuario da clic en el anuncio, WhatsApp se abrirá con uno de los sigu
 
 ## 5. Estrategia de Anuncios: Propiedad "Castaños del Vergel"
 
-Para promover de forma óptima esta propiedad de alto ticket utilizando las 21 fotos que subió Vanessa, estructuraremos **1 Campaña en Meta Ads con 3 publicaciones (anuncios) distintos** para realizar pruebas A/B de rendimiento.
+Para promover de forma óptima esta propiedad de alto ticket utilizando las 21 fotos reales que subió Vanessa, estructuraremos **1 Campaña en Meta Ads con 3 publicaciones (anuncios) distintos** para realizar pruebas A/B de rendimiento.
 
 ### Estructura de Anuncios (Ads) en Meta
 
-1.  **Anuncio 1: Carrusel de Detalles (Recomendado como Principal)**
-    *   **Imágenes:** 6 a 8 fotos seleccionadas (Fachada $\rightarrow$ Sala/Comedor $\rightarrow$ Cocina $\rightarrow$ Recámara Principal $\rightarrow$ Jardín/Patio $\rightarrow$ Amenidades de la Casa Club).
-    *   **Propósito:** Mostrar la distribución y amplitud de la residencia. Los usuarios prefieren deslizar para conocer los espacios.
-2.  **Anuncio 2: Video Corto / Reel (Formato Dinámico)**
-    *   **Material:** Edición rápida (slideshow dinámico) de 10-12 fotos con transiciones limpias, música en tendencia y textos superpuestos destacando las amenidades (ej. *"Residencia de lujo en Castaños del Vergel, Carretera Nacional | Seguridad 24/7 | Casa Club con Alberca"*).
-    *   **Propósito:** Capturar atención en la sección de Reels/Stories a un costo por clic más bajo.
-3.  **Anuncio 3: Imagen Única de Impacto ("Hero Shot")**
-    *   **Imagen:** La foto con mayor impacto visual del interior (ej. sala a doble altura o la fachada iluminada al atardecer).
-    *   **Propósito:** Filtrar a compradores atraídos por la estética y el diseño arquitectónico de alta gama.
+#### 1. Anuncio 1: El Carrusel de la Propiedad (Recorrido Lógico)
+Este anuncio muestra el interior y exterior en un orden natural que imita una visita en persona. Los usuarios deslizan para conocer la casa.
+*   **Card 1 (Fachada - Portada):** `esta-es-la-fachada-de-la-casa-de-castano` (Fachada moderna, gran impacto visual).
+*   **Card 2 (Área Social):** `area-de-sala-comedor-con-vista-al-jardin` (Muestra la iluminación y el espacio abierto).
+*   **Card 3 (Cocina):** `area-de-cocina-de-la-casa-de-castanos-de` (Detalle de la cocina moderna).
+*   **Card 4 (Recámara Principal):** `recamara-principal-de-la-casa-de-catanos` (Habitación amplia con piso tipo madera).
+*   **Card 5 (Balcón Principal):** `balcon-de-la-recamara-principal-castanos` (Vistas a las montañas de la Carretera Nacional).
+*   **Card 6 (Walk-in Closet):** `area-de-vestidor-de-la-recamara-principa` (Detalle del vestidor, clave para compradores de este segmento).
+*   **Card 7 (Jardín):** `jardin-de-castanos-del-vergel` (El patio trasero privado con pasto y espacio social).
+*   **Card 8 (Amenidades del Fraccionamiento):** `alberca-del-ara-comun-del-fraccionamient` (Alberca del fraccionamiento privado para mostrar el estilo de vida).
+
+#### 2. Anuncio 2: Reel/Video de Estilo de Vida (Carretera Nacional)
+Corte de video de 15 segundos (Slideshow rápido o transiciones dinámicas) con música y textos de especificaciones.
+*   **Secuencia de Fotos (1.5 segundos por foto):**
+    1.  `esta-es-la-fachada-de-la-casa-de-castano` (Fachada)
+    2.  `puerta-de-entrada-de-la-casa-de-castanos` (Entrada con puerta de doble altura de madera)
+    3.  `area-de-sala-comedor-con-vista-al-jardin` (Sala iluminada)
+    4.  `area-de-cocina-de-la-casa-de-castanos-de` (Cocina equipada)
+    5.  `recamara-principal-de-la-casa-de-catanos` (Recámara)
+    6.  `terraza-de-castanos-del-vergel` (Terraza/balcón)
+    7.  `jardin-de-castanos-del-vergel` (Jardín trasero)
+    8.  `casa-club-de-castanos-del-vergel` (Fachada de la Casa Club)
+    9.  `alberca-del-ara-comun-del-fraccionamient` (Alberca común)
+    10. `cnacha-de-futbol-del-fraccionamiento-cas` (Cancha de fútbol del fraccionamiento)
+*   **Textos en pantalla:**
+    *   *0:00 - 0:03:* "Residencia de Lujo en Carretera Nacional, MTY 🏔️"
+    *   *0:03 - 0:06:* "Acabados premium y espacios listos para habitar ✨"
+    *   *0:06 - 0:10:* "Fraccionamiento privado con alberca, cancha y seguridad 24/7 🛡️"
+    *   *0:10 - 0:15:* "Haz clic abajo para ver precio y agendar tu visita en WhatsApp 📲"
+
+#### 3. Anuncio 3: Imagen Única - Enfoque de Diseño Interior
+Un anuncio directo enfocado en el espacio social de convivencia familiar cotidiana.
+*   **Imagen:** `area-de-sala-comedor-con-vista-al-jardin` (Muestra la gran iluminación natural y la amplitud de la planta baja, conectando directamente con el jardín a través de ventanales).
+*   **Copy sugerido:** Enfocado en la tranquilidad, el diseño contemporáneo y la alta plusvalía de vivir en un fraccionamiento exclusivo.
 
 ---
 
