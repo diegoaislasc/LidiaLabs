@@ -269,6 +269,16 @@
             font-weight: 400;
         }
 
+        ul.custom-list li.done::before {
+            content: "✓";
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        ul.custom-list li.done {
+            opacity: 0.55;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 3.5rem; }
@@ -490,7 +500,7 @@
                 <div>
                     <div class="col-header">REQUERIMIENTO TÉCNICO</div>
                     <ul class="custom-list">
-                        <li><strong>Vincular WhatsApp:</strong> Conectar el número activo con Lidia a la cuenta publicitaria de Meta de Vanessa.</li>
+                        <li class="done"><strong>Vincular WhatsApp:</strong> Conectar el número activo con Lidia a la cuenta publicitaria de Meta de Vanessa.</li>
                         <li><strong>Montar Anuncios:</strong> Configurar el grupo de anuncios con la segmentación de Guadalajara/Monterrey Carretera Nacional y subir los 3 formatos creativos.</li>
                     </ul>
                 </div>
