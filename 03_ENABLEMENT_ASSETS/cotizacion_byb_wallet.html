@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial - Tarjeta Digital BYB</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap');
+        
+        :root {
+            --text-main: #111111;
+            --text-muted: #737373;
+            --border-color: #eaeaea;
+            --bg-color: #ffffff;
+            --accent-light: #b0b0b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .document-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Cabecera (Header) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 64px;
+        }
+
+        .header-left strong {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-right span {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .header-right strong {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 64px;
+        }
+
+        .supertitle {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin: 0 0 24px 0;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0;
+        }
+
+        .hero p strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Metadata Section */
+        .metadata-section {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+            display: grid;
+            grid-template-columns: 1.5fr 1.5fr 2fr;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .meta-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .meta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+        }
+
+        .meta-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .meta-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .meta-grid-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 24px;
+        }
+
+        /* Secciones Body */
+        .section-container {
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            margin-top: 48px;
+        }
+
+        .section-container:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 24px;
+        }
+
+        .section-title-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .section-header .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--border-color);
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .section-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Tipografía Body */
+        .lead-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+
+        .muted-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 24px 0;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* 2 Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .col-header {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+
+        /* Custom Lists */
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        ul.custom-list li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        ul.custom-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 400;
+        }
+
+        /* Pricing Box (Accounting list style) */
+        .accounting-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+        }
+
+        .ac-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .ac-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        
+        .ac-row.total-row {
+            border-bottom: none;
+            padding-top: 8px;
+        }
+
+        .ac-row.total-row .ac-val {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .metadata-section {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        /* Print Optimized Styles */
+        @media print {
+            @page {
+                size: portrait;
+                margin: 0;
+            }
+            
+            body {
+                padding: 12mm 18mm;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .document-container {
+                max-width: 100%;
+            }
+
+            header {
+                margin-bottom: 24px !important;
+            }
+
+            .hero {
+                margin-bottom: 24px !important;
+            }
+
+            h1 {
+                font-size: 3.5rem !important;
+                margin-bottom: 12px !important;
+                line-height: 1.0 !important;
+            }
+
+            .metadata-section {
+                display: grid !important;
+                grid-template-columns: 1.5fr 1.5fr 2fr !important;
+                gap: 24px !important;
+                margin-bottom: 32px !important;
+                padding: 16px 0 !important;
+            }
+
+            .two-col {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 32px !important;
+                margin-top: 16px !important;
+            }
+
+            .section-container {
+                break-inside: avoid;
+                margin-top: 24px !important;
+                padding-top: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-container">
+        
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <strong>Servicios de Consultoría</strong>
+            </div>
+            <div class="header-right">
+                <span>COTIZACIÓN</span>
+                <strong>DOC-2026-BYB01</strong>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="supertitle">PROPUESTA DE IMPLEMENTACIÓN DIGITAL</div>
+            <h1>Tarjeta<br>de Accesos</h1>
+            <p>Diseño, despliegue y lanzamiento del sistema de tarjetas digitales en Apple Wallet & Google Wallet para el control de membresías de BYB. <strong>Lanzamiento ágil con riesgo cero.</strong></p>
+        </div>
+
+        <!-- Metadata Grid -->
+        <div class="metadata-section">
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">PREPARADO POR</span>
+                    <span class="meta-title">Consultor Independiente</span>
+                    <div class="meta-text">
+                        Servicios de Tecnología<br>
+                        y Transformación Digital
+                    </div>
+                </div>
+            </div>
+            
+            <div class="meta-col">
+                <div class="meta-group">
+                    <span class="meta-label">CLIENTE</span>
+                    <span class="meta-title">BYB Studio</span>
+                    <div class="meta-text">
+                        Membresías Full Access<br>
+                        Botas de Compresión
+                    </div>
+                </div>
+            </div>
+
+            <div class="meta-col">
+                <div class="meta-group" style="margin-bottom: 8px;">
+                    <span class="meta-label">PROYECTO</span>
+                    <span class="meta-text">Pase Digital en Wallet</span>
+                </div>
+                <div class="meta-grid-right">
+                    <div class="meta-group">
+                        <span class="meta-label">EMISIÓN</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">30 jun 2026</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">VALIDEZ</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">15 días</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">MONEDA</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">MXN</span>
+                    </div>
+                    <div class="meta-group">
+                        <span class="meta-label">ESTATUS</span>
+                        <span class="meta-title" style="font-size: 0.85rem;">Propuesta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Sections -->
+        
+        <!-- Section 01 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">01</span>
+                    <h2>El Alcance del Servicio</h2>
+                </div>
+                <span class="section-tag">ENTREGABLES</span>
+            </div>
+            <p class="lead-text">Servicio integral llave en mano: desde el diseño visual de la tarjeta hasta la capacitación del staff y materiales de cara al cliente.</p>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">DISEÑO Y CONFIGURACIÓN</div>
+                    <ul class="custom-list">
+                        <li><strong>Diseño de la Tarjeta:</strong> Diseño del pase digital para Apple Wallet & Google Wallet con colores de BYB, logo y campos de usos (8 usos al mes).</li>
+                        <li><strong>Setup de Plataforma:</strong> Configuración y enlace de certificados de desarrollador y software de gestión.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="col-header">MATERIALES Y CAPACITACIÓN</div>
+                    <ul class="custom-list">
+                        <li><strong>Manual para el Staff:</strong> Instrucciones de descarga e inicio de sesión de la app de escaneo (Stamper App) para tablet/celular en recepción.</li>
+                        <li><strong>Guía de Descarga Clientes:</strong> Diseño del instructivo digital (PDF o link) para que los clientes agreguen su tarjeta en 1 clic.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 02 -->
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">02</span>
+                    <h2>Propuesta Económica</h2>
+                </div>
+                <span class="section-tag">PRESUPUESTO</span>
+            </div>
+            <p class="lead-text">Esquema comercial de pago único por implementación, con opciones de soporte básico o transferencia directa de licencias.</p>
+            
+            <div class="accounting-list">
+                <div class="ac-row">
+                    <span>Diseño visual y maquetación de la tarjeta digital (Apple & Google)</span>
+                    <span class="ac-val">$3,500.00</span>
+                </div>
+                <div class="ac-row">
+                    <span>Configuración técnica, enlace de plataforma e integración de QR</span>
+                    <span class="ac-val">$4,500.00</span>
+                </div>
+                <div class="ac-row">
+                    <span>Diseño de materiales de capacitación (Staff) e instructivo de descarga (Clientes)</span>
+                    <span class="ac-val">$2,500.00</span>
+                </div>
+                <div class="ac-row">
+                    <span>Soporte de acompañamiento técnico en el lanzamiento (Semana 1)</span>
+                    <span class="ac-val">$1,500.00</span>
+                </div>
+                <div class="ac-row total-row">
+                    <strong>TOTAL PAGO ÚNICO (IMPLEMENTACIÓN Y LANZAMIENTO)</strong>
+                    <span class="ac-val">$12,000.00 MXN</span>
+                </div>
+            </div>
+            
+            <p class="muted-text" style="margin-top: 16px; font-size: 0.8rem;">*Nota sobre licenciamiento: La suscripción mensual de la plataforma de pases (Loopy Loyalty, $25 USD/mes) puede ser pagada directamente por BYB agregando su tarjeta a la cuenta, o bien gestionada por el consultor con un cargo mensual por soporte de $950 MXN (incluye la licencia).</p>
+        </div>
+
+        <!-- Section 03 -->
+        <div class="section-container" style="border-bottom: 1px solid var(--border-color); padding-bottom: 48px; margin-bottom: 48px;">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <span class="num">03</span>
+                    <h2>Tiempos de Entrega</h2>
+                </div>
+                <span class="section-tag">CRONOGRAMA</span>
+            </div>
+            
+            <div class="two-col">
+                <div>
+                    <div class="col-header">FASE 1: DISEÑO Y APROBACIÓN</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Días 1 a 3: Entrega del mockup digital de la tarjeta. Modificaciones y aprobación del diseño final por parte de BYB.</p>
+                </div>
+                <div>
+                    <div class="col-header">FASE 2: CONFIGURACIÓN Y MATERIALES</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Días 4 a 6: Setup de la base técnica, enlace de QR de descargas y diseño de las guías de capacitación e instructivo para clientes.</p>
+                </div>
+                <div>
+                    <div class="col-header">FASE 3: LANZAMIENTO</div>
+                    <p class="muted-text" style="font-size: 0.85rem; margin-bottom: 8px;">Día 7: Capacitación del staff de recepción, entrega del enlace de descargas para los clientes e inicio del piloto en vivo.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
