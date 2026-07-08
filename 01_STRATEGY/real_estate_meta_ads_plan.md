@@ -107,3 +107,41 @@ Cuando los prospectos den clic en cualquiera de estos 3 anuncios, iniciarán el 
 
 Lidia reconocerá esta propiedad de forma inmediata, saludando cálidamente al lead (ej. *"¡Buenas tardes! Claro, ¿gustas que te comparta los detalles de la casa?"*) para iniciar una conversación fluida antes de guiarlo hacia las preguntas de calificación de presupuesto/crédito y agendar la visita en el calendario.
 
+---
+
+## 7. Distribución por Canales: Meta Ads vs. Google Ads
+
+Para maximizar el rendimiento y optimizar el presupuesto, distribuiremos los recursos de la siguiente manera:
+
+### A. Meta Ads (Prioridad 90% - Canal de Conversión Principal)
+Meta es el canal ideal debido a la inmediatez visual y su integración directa con **Click-to-WhatsApp (CTWA)**, que permite a Lidia actuar al instante.
+*   **Video Largo (30s):** Se usará en campañas de Feed y Reels de Instagram/Facebook. Ideal para audiencias tibias/frías.
+*   **6 Imágenes (4:3):** Se consolidarán en un **Anuncio de Carrusel** en el Feed, permitiendo que el usuario deslice para ver la propiedad en su orden lógico.
+*   **3 Stories (Vertical 9:16):** Se colocarán exclusivamente en ubicaciones de Instagram/Facebook Stories e Instagram Reels.
+    *   *Story 1 (Imagen 9:16 - Fachada):* Para captar atención rápido.
+    *   *Story 2 (Imagen 9:16 - Área Social/Alberca):* Para vender estilo de vida.
+    *   *Story 3 (Video Corto 15s):* Slideshow dinámico y acelerado de la propiedad.
+
+### B. Google Ads (Prioridad 10% - Canal de Captura de Intención Directa)
+Google Ads no soporta de forma nativa e integrada Click-to-WhatsApp directo con automatizaciones de flujo. Por ende, los recursos se usarán así:
+*   **Campañas de Búsqueda (Search):** Tráfico 100% de texto enfocado en palabras clave como *"casas en venta carretera nacional monterrey"* o *"castaños del vergel residencias"*. Este tráfico se enviará a una Landing Page optimizada con un widget de WhatsApp que active a Lidia.
+*   **Campaña Performance Max (PMax):** Subiremos el **Video Largo (30s)** y las **6 Imágenes (4:3)** para aparecer automáticamente en YouTube, Gmail, y la red de Display de Google.
+*   **Uso de Stories:** No se recomiendan para Google Ads clásicos, excepto si se adaptan a YouTube Shorts en campañas de video de acción.
+
+---
+
+## 8. Calendario de Lanzamiento y Distribución (4 Semanas)
+
+*   **Semana 1 (Fase de Aprendizaje y Test A/B):**
+    *   Lanzar campaña en Meta Ads con presupuesto controlado (ej. $15 USD diarios).
+    *   Correr en paralelo: el Video Largo (30s), el Carrusel de 6 imágenes (4:3) y el conjunto de Stories (9:16).
+    *   *Objetivo:* Detectar qué formato creativo ofrece el menor costo por conversación iniciada.
+*   **Semana 2 (Fase de Optimización Conversacional):**
+    *   Pausar los creativos de bajo rendimiento.
+    *   Analizar las primeras interacciones de Lidia y ajustar los prompts en caso de detectar fricciones comunes en las respuestas.
+    *   *Objetivo:* Incrementar la tasa de leads calificados (*vetted*).
+*   **Semanas 3 y 4 (Fase de Escala y Cierre):**
+    *   Dirigir el 80% del presupuesto a los anuncios ganadores.
+    *   Consolidar las citas agendadas y dar seguimiento a la asistencia física de las visitas con Vanessa.
+
+
