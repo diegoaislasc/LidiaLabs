@@ -9,8 +9,8 @@
 Para este piloto, utilizaremos campañas de **Clientes Potenciales (Conversiones a WhatsApp - Click-to-WhatsApp / CTWA)**.
 
 *   **¿Por qué CTWA?:** Es el formato con menor fricción. El usuario hace clic en el anuncio en Instagram/Facebook e inmediatamente abre un chat de WhatsApp con un mensaje preestablecido. Esto permite que Lidia responda al instante en menos de 5 segundos.
-*   **Segmentación Geográfica:** Guadalajara y zonas aledañas (específico a las propiedades de Vanessa).
-*   **Segmentación Detallada (Intereses):** Bienes raíces, inversión inmobiliaria, portales de búsqueda de vivienda (ej. Metroscúbicos, Inmuebles24) e intereses de ticket medio-alto.
+*   **Segmentación Geográfica:** Monterrey, Nuevo León y zonas aledañas (específico para promover Castaños del Vergel en Carretera Nacional).
+*   **Segmentación Detallada (Intereses):** Bienes raíces, inversión inmobiliaria, portales de búsqueda de vivienda (ej. Metroscúbicos, Inmuebles24) e intereses de ticket medio-alto en Monterrey.
 *   **Presupuesto Recomendado:** Presupuesto diario controlado (ej. $10 - $20 USD diarios) para evaluar la conversión antes de escalar.
 
 ---
@@ -29,21 +29,19 @@ Cuando el usuario da clic en el anuncio, WhatsApp se abrirá con uno de los sigu
 ### Opción A: Enfoque de Inmediatez (Dolor del Comprador)
 *   **Concepto:** Apelar al comprador cansado de que los asesores inmobiliarios tarden días en responder.
 *   **Texto Principal:**
-    > 🏠 ¿Buscando tu próximo hogar en Guadalajara? No pierdas tiempo esperando días a que un asesor te responda para darte la ubicación o decirte si califica tu crédito.
+    > 🏠 ¿Buscando tu próximo hogar en Monterrey? No pierdas tiempo esperando días a que un asesor te responda para darte la ubicación o decirte si califica tu crédito.
     > 
-    > En nuestro WhatsApp te atendemos en **segundos**, las 24 horas del día. Consulta nuestro inventario disponible, califica tu presupuesto y agenda tu visita de inmediato en nuestro calendario.
+    > En nuestro WhatsApp te atendemos en **segundos**, las 24 horas del día. Consulta los detalles de Castaños del Vergel, califica tu presupuesto y agenda tu visita de inmediato en nuestro calendario.
     > 
     > 👇 Da clic abajo y empieza a chatear ahora mismo.
 *   **Llamado a la Acción (CTA):** Enviar mensaje de WhatsApp.
 
 ### Opción B: Enfoque de Catálogo/Carrusel (Visual de Propiedades)
-*   **Concepto:** Mostrar un carrusel con fotos de las casas reales que Vanessa subió a su espacio de LidiaLabs.
+*   **Concepto:** Mostrar un carrusel con fotos de la propiedad real en Carretera Nacional.
 *   **Texto Principal:**
-    > ✨ Tu nuevo hogar te está esperando. Descubre nuestras propiedades exclusivas listas para entrega en las mejores zonas de Guadalajara.
+    > ✨ Tu nuevo hogar en Carretera Nacional te está esperando. Descubre esta residencia exclusiva lista para entrega en Castaños del Vergel.
     > 
-    > 📲 Da clic en el botón para ver la galería completa, conocer planes de financiamiento y agendar una visita guiada directamente por WhatsApp en menos de un minuto.
-    > 
-    > ¡Atención inmediata las 24/7!
+    > 📲 Da clic en el botón para ver la galería completa, conocer planes de financiamiento y agendar una visita guiada directamente por WhatsApp en menos de un minuto con atención inmediata las 24/7.
 *   **Llamado a la Acción (CTA):** Enviar mensaje de WhatsApp.
 
 ---
